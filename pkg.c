@@ -129,7 +129,7 @@ static void
 scan_dir (char *dirname)
 {
   GDir *dir;
-  gchar *d_name;
+  const gchar *d_name;
 
   int dirnamelen = strlen (dirname);
   /* Use a copy of dirname cause Win32 opendir doesn't like
@@ -182,7 +182,7 @@ scan_dir (char *dirname)
 
           debug_spew ("File '%s' appears to be a .pc file\n", d_name);
           
-	  strncpy (pkgname, d_name, len - EXT_LEN);
+          strncpy (pkgname, d_name, len - EXT_LEN);
           pkgname[len-EXT_LEN] = '\0';
 
           if (g_hash_table_lookup (locations, pkgname))
