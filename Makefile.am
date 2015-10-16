@@ -45,7 +45,10 @@ m4dir = $(datadir)/aclocal
 m4_DATA = pkg.m4
 dist_doc_DATA = pkg-config-guide.html
 dist_man_MANS = pkg-config.1
-EXTRA_DIST = README.win32
+EXTRA_DIST =	\
+	README.win32		\
+	config.h.win32.in	\
+	config.h.win32
 
 # gcov test coverage
 gcov:
